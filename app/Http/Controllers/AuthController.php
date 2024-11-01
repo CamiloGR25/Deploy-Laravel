@@ -18,18 +18,18 @@ class AuthController extends Controller
     {
         // validación de campos
         $request->validate([
-            'correo' => 'required|email',
+            'email' => 'required|email',
             'password' => 'required|string',
         ]);
 
         // Intento de autenticación
-        if (Auth::attempt(['correo' => $request->correo, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->intended('users');
         }
 
         // redirige al login con un mensaje de error
         return back()->withErrors([
-            'correo' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
+            'email' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
         ])->withInput();
     }
 
