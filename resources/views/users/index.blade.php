@@ -30,7 +30,7 @@
             <tr>
                 <td class="py-2 px-4 border-b">{{ $user->nombre }}</td>
                 <td class="py-2 px-4 border-b">{{ $user->apellido }}</td>
-                <td class="py-2 px-4 border-b">{{ $user->correo }}</td>
+                <td class="py-2 px-4 border-b">{{ $user->email }}</td>
                 <td class="py-2 px-4 border-b">{{ $user->nro_telefono }}</td>
                 <td class="py-2 px-4 border-b">
                     <a href="{{ route('users.edit', $user->id) }}" class="text-blue-500">Editar</a>

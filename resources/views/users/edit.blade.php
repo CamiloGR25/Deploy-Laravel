@@ -18,7 +18,7 @@
     </div>
     <div class="mb-4">
         <label class="block">Correo:</label>
-        <input type="email" name="correo" class="border-gray-300 rounded w-full" value="{{ $user->correo }}" required>
+        <input type="email" name="email" class="border-gray-300 rounded w-full" value="{{ $user->email }}" required>
     </div>
     <div class="mb-4">
         <label class="block">Número de Teléfono:</label>

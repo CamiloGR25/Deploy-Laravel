@@ -40,7 +40,7 @@ class UserController extends Controller
         $request->validate([
             'nombre' => 'required|string|max:255',
             'apellido' => 'required|string|max:255',
-            'correo' => 'required|email|unique:users',
+            'email' => 'required|email|unique:users',
             'nro_telefono' => 'nullable|string|max:15',
             'password' => 'required|string'
         ]);
@@ -49,7 +49,7 @@ class UserController extends Controller
         User::create([
             'nombre' => $request->nombre,
             'apellido' => $request->apellido,
-            'correo' => $request->correo,
+            'email' => $request->email,
             'nro_telefono' => $request->nro_telefono,
             'password' => bcrypt($request->password),
         ]);
@@ -92,7 +92,7 @@ class UserController extends Controller
         $request->validate([
             'nombre' => 'required|string|max:255',
             'apellido' => 'required|string|max:255',
-            'correo' => 'required|email|unique:users,correo,' . $id,
+            'email' => 'required|email|unique:users,email,' . $id,
             'nro_telefono' => 'nullable|string|max:15',
             'password' => 'nullable|string'
         ]);
@@ -100,7 +100,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->nombre = $request->nombre;
         $user->apellido = $request->apellido;
-        $user->correo = $request->correo;
+        $user->email = $request->email;
         $user->nro_telefono = $request->nro_telefono;
     
         if ($request->filled('password')) {

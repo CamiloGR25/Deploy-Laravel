@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('correo')->unique();
+            $table->string('email')->unique();
             $table->string('nro_telefono')->nullable();
             $table->string('password');
             $table->timestamps();
